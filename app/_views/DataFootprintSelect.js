@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 "use client";
 import { useState } from "react";
 import ByteGuardianLogo from "@/public/image/ByteGuardian.svg";
@@ -36,6 +38,7 @@ const socialMediaPlatforms = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Threads_App_Logo.svg/800px-Threads_App_Logo.svg.png",
   },
 ];
+// 로고 수정 필요
 
 const SocialMediaSelector = ({ selectedPlatform, onSelect }) => {
   return (

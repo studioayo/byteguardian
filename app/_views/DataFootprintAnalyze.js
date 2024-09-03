@@ -1,7 +1,6 @@
 "use client";
 import { useEffect } from "react";
 import Image from "next/image";
-import RegistrationVector from "@/public/image/registration.svg";
 import ByteGuardianLogo from "@/public/image/ByteGuardian.svg";
 import { motion } from "framer-motion";
 
@@ -11,7 +10,7 @@ export default function DataFootprintMain({ onNext, onBack }) {
       onNext();
     }, 3000);
 
-    // 컴포넌트가 언마운트될 때 타이머를 정리합니다.
+    // 컴포넌트 언마운트 시 타이머 따잇
     return () => clearTimeout(timer);
   }, [onNext]);
 
@@ -71,6 +70,7 @@ export default function DataFootprintMain({ onNext, onBack }) {
             width={200}
             height={200}
             alt="Running Man"
+            priority
           />
         </motion.div>
       </div>
