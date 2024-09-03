@@ -1,0 +1,79 @@
+"use client";
+import { useEffect } from "react";
+import Image from "next/image";
+import RegistrationVector from "@/public/image/registration.svg";
+import ByteGuardianLogo from "@/public/image/ByteGuardian.svg";
+import { motion } from "framer-motion";
+
+export default function DataFootprintMain({ onNext, onBack }) {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      onNext();
+    }, 3000);
+
+    // 컴포넌트가 언마운트될 때 타이머를 정리합니다.
+    return () => clearTimeout(timer);
+  }, [onNext]);
+
+  return (
+    <div className="flex flex-col m-auto max-w-4xl h-screen pb-[108px] bg-[#1c1c1c] z-500">
+      <div className="flex w-full items-center justify-between px-4">
+        <button onClick={onBack} className="flex py-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+        <ByteGuardianLogo />
+        <div className="w-6 h-6" />
+      </div>
+      <div className="top-0 bg-[#1c1c1c] w-full h-full px-4 flex flex-col justify-between">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.5,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+          className="flex flex-col pt-6 gap-2"
+        >
+          <h1 className="text-2xl text-white">
+            <span className="text-[#37ebfc]">인스타그램</span>의 <br /> 데이터
+            발자국을 쫓고 있어요
+          </h1>
+          <p className="text-gray-500 text-base">열심히 달려가는 중 🏃‍♂️‍➡️</p>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.5,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+          className="h-full flex items-center justify-center"
+        >
+          <Image
+            src="/image/running.png"
+            width={200}
+            height={200}
+            alt="Running Man"
+          />
+        </motion.div>
+      </div>
+    </div>
+  );
+}

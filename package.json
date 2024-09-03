@@ -9,16 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "framer-motion": "^11.3.31",
+    "next": "13.5.6",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "13.5.6"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "autoprefixer": "^10",
-    "postcss": "^8",
-    "tailwindcss": "^3",
     "eslint": "^8",
-    "eslint-config-next": "13.5.6"
+    "eslint-config-next": "13.5.6",
+    "postcss": "^8",
+    "tailwindcss": "^3"
   },
-  "packageManager": "npm@10.8.2+sha512.c7f0088c520a46596b85c6f8f1da943400199748a0f7ea8cb8df75469668dc26f6fb3ba26df87e2884a5ebe91557292d0f3db7d0929cdb4f14910c3032ac81fb"
+  "packageManager": "pnpm@9.9.0+sha512.60c18acd138bff695d339be6ad13f7e936eea6745660d4cc4a776d5247c540d0edee1a563695c183a66eb917ef88f2b4feb1fc25f32a7adcadc7aaf3438e99c1"
 }
