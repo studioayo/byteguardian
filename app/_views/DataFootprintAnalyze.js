@@ -10,17 +10,16 @@ export default function DataFootprintMain({ onNext, onBack }) {
       onNext();
     }, 3000);
 
-    // 컴포넌트 언마운트 시 타이머 따잇
     return () => clearTimeout(timer);
   }, [onNext]);
 
   return (
-    <div className="flex flex-col m-auto max-w-4xl h-screen pb-[108px] bg-[#1c1c1c] z-500">
+    <div className="flex flex-col m-auto max-w-3xl min-h-dvh bg-[#1c1c1c] z-500">
       <div className="flex w-full items-center justify-between px-4">
         <button onClick={onBack} className="flex py-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
+            className="h-6 w-6 text-white"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -33,20 +32,21 @@ export default function DataFootprintMain({ onNext, onBack }) {
             />
           </svg>
         </button>
-        <ByteGuardianLogo />
+        <ByteGuardianLogo className="mt-[1px]" />
         <div className="w-6 h-6" />
       </div>
-      <div className="top-0 bg-[#1c1c1c] w-full h-full px-4 flex flex-col justify-between">
+      <div className="flex flex-col flex-grow justify-between px-4 pb-[108px]">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
             duration: 0.8,
-            delay: 0.5,
+
             ease: [0, 0.71, 0.2, 1.01],
           }}
           className="flex flex-col pt-6 gap-2"
+          viewport={{ once: true }}
         >
           <h1 className="text-2xl text-white">
             <span className="text-[#37ebfc]">인스타그램</span>의 <br /> 데이터
@@ -60,10 +60,11 @@ export default function DataFootprintMain({ onNext, onBack }) {
           animate={{ opacity: 1, scale: 1 }}
           transition={{
             duration: 0.8,
-            delay: 0.5,
+
             ease: [0, 0.71, 0.2, 1.01],
           }}
-          className="h-full flex items-center justify-center"
+          className="flex items-center justify-center flex-grow"
+          viewport={{ once: true }}
         >
           <Image
             src="/image/running.png"

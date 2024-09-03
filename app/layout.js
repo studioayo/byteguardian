@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import { ProgressBar, ProgressBarProvider } from "react-transition-progress";
 import "./globals.css";
 
 const Pretendard = localFont({
@@ -15,7 +16,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ko">
-      <body className={Pretendard.className}>{children}</body>
+      <body className={Pretendard.className}>
+        <ProgressBarProvider>
+          <ProgressBar className="fixed h-1 shadow-lg shadow-sky-500/20 bg-sky-500 top-0" />
+          {children}
+        </ProgressBarProvider>
+      </body>
     </html>
   );
 }
